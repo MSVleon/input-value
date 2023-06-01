@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Input value</title>
+
+    <style>
+        #output {
+            border: 3px outset green;
+            border-radius: 3px;
+            padding: 5px;
+        }
+    </style>
+
+    <script>
+        function plaatsTekst() {
+        //console.log ("plaat Tekst is geopend")
+        let vnaam = document.getElementById("vn").value
+        let anaam = document.getElementById("an").value
+        let leeft = document.getElementById("lt").value
+       // console.log("vnaam = " + vnaam)
+
+        let tekst = "hallo ik ben"
+        tekst = tekst + vnaam 
+        tekst = tekst + anaam
+        document.getElementById("output").innerHTML = "Hallo ik ben " + vnaam + " " + anaam + " en ik ben " + leeft + " jaar oud."
+         
+        }
+    </script>
+
+</head>
+
+<body>
+    Hieronder komt informatie na de verzending. <br>
+    <div id="output">
+        ...
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td> Voornaam: </td>
+            <td> <input type="text" id="vn"></td>
+        </tr>
+        <tr>
+            <td> achternaam: </td>
+            <td> <input type="text" id="an"></td>
+        </tr>
+        <tr>
+            <td>Leeftijd</td>
+            <td> <input type="number" id="lt"></td>
+        </tr>
+    </table>
+    <button onclick="plaatsTekst()"> verzenden </button>
+   
+
+
+
+
+
+
+
+  
+    <dialog id="sign-in-dialog">
+      <form method="post" action="/sign-in">
+        <h1>Sign In</h1>
+        <p>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password" required>
+        </p>
+        <p>
+          <button type="submit">Sign In</button>
+          <button type="button" onclick="closeDialog()">Cancel</button>
+        </p>
+      </form>
+    </dialog>
+  
+    <script>
+      const dialog = document.getElementById('sign-in-dialog');
+  
+      function openDialog() {
+        dialog.show();
+      }
+  
+      function closeDialog() {
+        dialog.close();
+      }
+    </script>
+  
+    <button id="open-btn" onclick="openDialog()">Sign In</button>
+  
+
+
+
+</body>
+
+</html>
